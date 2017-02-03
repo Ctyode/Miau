@@ -6,40 +6,6 @@ package org.flamie.miau.layout;
 
 public class Frame implements Positionable {
 
-    public enum AnchorHorizontal {
-
-        LEFT(0.0f), CENTER(0.5f), RIGHT(1.0f);
-
-        public final float aspect;
-
-        AnchorHorizontal(float aspect) {
-            this.aspect = aspect;
-        }
-    }
-
-    public enum AnchorVertical {
-
-        TOP(0.0f), CENTER(0.5f), BOTTOM(1.0f);
-
-        public final float aspect;
-
-        AnchorVertical(float aspect) {
-            this.aspect = aspect;
-        }
-    }
-
-    public static class Anchor {
-
-        public final AnchorHorizontal anchorHorizontal;
-        public final AnchorVertical anchorVertical;
-
-        public Anchor(AnchorHorizontal anchorHorizontal, AnchorVertical anchorVertical) {
-            this.anchorHorizontal = anchorHorizontal;
-            this.anchorVertical = anchorVertical;
-        }
-
-    }
-
     public final Vec2<Float> position;
     public final Vec2<Float> size;
 
@@ -48,10 +14,10 @@ public class Frame implements Positionable {
         this.size = size;
     }
 
-    public Vec2<Float> getAnchor(Anchor anchor) {
+    public Vec2<Float> getAnchor(Vec2<Float> anchor) {
         return new Vec2<>(
-                position.x + anchor.anchorHorizontal.aspect * size.x,
-                position.y + anchor.anchorVertical.aspect * size.y);
+                position.x + anchor.x * size.x,
+                position.y + anchor.y * size.y);
     }
 
     @Override
