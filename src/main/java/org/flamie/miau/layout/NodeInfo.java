@@ -5,6 +5,6 @@ package org.flamie.miau.layout;
  */
 public interface NodeInfo {
 
-
+    Vec2<Float> positionFromOrigin(Vec2<Float> origin);
 
 }

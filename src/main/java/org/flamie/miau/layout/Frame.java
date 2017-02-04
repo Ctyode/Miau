@@ -20,10 +20,11 @@ public class Frame implements NodeInfo {
                 position.y + anchor.y * size.y);
     }
 
-//    public Vec2<Float> getPositionRelativeTo(Vec2<Float> point) {
-//        return new Vec2<>(
-//                point.x + position.x,
-//                point.y + position.y);
-//    }
+    @Override
+    public Vec2<Float> positionFromOrigin(Vec2<Float> origin) {
+        return new Vec2<>(
+                origin.x + position.x,
+                origin.y + position.y);
+    }
 
 }
