@@ -6,7 +6,7 @@ package org.flamie.miau.layout;
  * Created by flamie on 03.02.17 :3
  */
 
-public class Scene implements Positionable {
+public class Scene implements NodeInfo {
 
     private final Vec2<Float> position;
 
@@ -14,11 +14,10 @@ public class Scene implements Positionable {
         this.position = position;
     }
 
-    @Override
-    public Vec2<Float> getPositionRelativeTo(Vec2<Float> point) {
-        return new Vec2<>(
-                point.x + position.x,
-                point.y + position.y);
-    }
+//    public Vec2<Float> getPositionRelativeTo(Vec2<Float> point) {
+//        return new Vec2<>(
+//                point.x + position.x,
+//                point.y + position.y);
+//    }
 
 }
